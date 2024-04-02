@@ -48,10 +48,9 @@ insert into usuario(nombre, correo, contraseña, saldo) values ('Juan', 'juan@co
 insert into usuario(nombre, correo, contraseña, saldo) values ('Jose', 'jose@correo.cl', '4321', 1000000);
 insert into usuario(nombre, correo, contraseña, saldo) values ('Maria', 'Maria@correo.cl', '5678', 1000000); 
 
-SELECT moneda.current_name, moneda.currency_symbol, usuario.nombre, usuario.saldo
-FROM usuario
-JOIN moneda
-ON usuario.currency_id = moneda.currency_id;
+SELECT current_name FROM moneda
+JOIN usuario ON moneda.currency_id = usuario.currency_id
+WHERE user_id = 1;
 
 select * from transaccion;
 
